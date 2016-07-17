@@ -37,6 +37,8 @@ class StudentsController < ApplicationController
     end
   end
 
+
+
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
@@ -69,6 +71,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :grade, :gpa)
+      params.require(:student).permit(:name, :grade, :gpa, :avatar)
     end
 end
