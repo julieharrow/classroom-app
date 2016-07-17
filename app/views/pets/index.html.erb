@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pets in the Classroom</h1>
+
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+        <div class="panel-body">
+         <h2><%= "#{pet.name.capitalize} the #{pet.animal.downcase}"%></h2>
+         <h4><%= "Age: #{pet.age}" %></h4>
+
+         <div class="btn-group">
+          <%= link_to 'Show', pet, class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_pet_path(pet), class: "btn btn-default" %>
+          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+         </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Pet', new_pet_path, class: "btn btn-primary" %>
