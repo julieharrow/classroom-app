@@ -11,14 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716231400) do
+ActiveRecord::Schema.define(version: 20160717020600) do
+
+  create_table "pets", force: :cascade do |t|
+    t.string   "name"
+    t.string   "animal"
+    t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.integer  "grade"
     t.decimal  "gpa"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -26,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160716231400) do
     t.integer  "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "subject"
   end
 
 end
